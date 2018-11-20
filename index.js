@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 
 exports.get = function(event, context, callback) {
-  var contents = publicPage();
+  var contents = fs.readFileSync(`public${path.sep}index.html`);
   var result = {
     statusCode: 200,
     body: contents.toString(),
@@ -14,7 +14,3 @@ exports.get = function(event, context, callback) {
 
   callback(null, result);
 };
-
-function publicPage() {
-  return fs.readFileSync(`public${path.sep}index.html`);
-}
