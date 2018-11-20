@@ -31,10 +31,5 @@ Resources:
         GetEvent:
           Type: Api
           Properties:
-            Path: /pub/
-            Method: get
-        GetProxy:
-          Type: Api
-          Properties:
-            Path: '/{proxy+}'
+            Path: /
             Method: get
